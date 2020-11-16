@@ -1,0 +1,40 @@
+{
+  "name": "lzomedia/visually",
+  "type": "wordpress-plugin",
+  "description": "A plugin to help you extract and create infographics posts",
+  "keywords": [ "wordpress" ],
+  "homepage": "https://lzomedia",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Stefan Izdrail",
+      "email": "stefan@Lzomedia.com",
+      "homepage": "https://lzomedia.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/lzomedia/Visually/issues",
+    "source": "https://github.com/lzomedia/Visually/"
+  },
+  "require": {
+    "php": ">=7.1",
+    "wpbones/wpbones": "dev-master",
+    "symfony/http-client": "^5.1",
+    "symfony/dom-crawler": "^5.1",
+    "symfony/css-selector": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Visually\\": "plugin/"
+    },
+    "files": [
+      "functions.php"
+    ]
+  },
+  "scripts": {
+      "post-autoload-dump": [
+        "php -r \"copy('vendor/wpbones/wpbones/src/Console/bin/bones', 'bones');\"",
+        "php bones rename"
+      ]
+    }
+}
